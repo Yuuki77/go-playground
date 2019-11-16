@@ -10,10 +10,22 @@ func countBits(x int) int {
 
 	numBits := 0
 
-	for index := 0; x != 0; index++ {
+	for x != 0 {
+		// on := x&1 != 0
+		// if on {
+		// 	numBits++
+		// }
 		numBits += (x & 1)
-		x >>= 1
+		fmt.Printf("num bits-> %v x&1 -> %v", numBits, x&1)
+		fmt.Println()
+		fmt.Printf("%b", x) // 1111011
+		fmt.Println()
+		x = x >> 1
+		fmt.Println(x)
+		fmt.Println()
+
 	}
+
 	return numBits
 }
 
@@ -51,7 +63,7 @@ func bitOperationsTest() {
 	bit := flag1 | flag3 | flag5
 	var b bitset.BitSet
 	b.Set(bit)
-	fmt.Printf("<<{1, 3, 5} = %#b", b.Bytes())
+	// fmt.Printf("<<{1, 3, 5} = #b", b.Bytes())
 
 	// 		b.Set(card1)
 
